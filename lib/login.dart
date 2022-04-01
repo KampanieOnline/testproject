@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:testproject/action_text.dart';
+import 'package:testproject/register.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key, required Color backgroundColor}) : super(key: key);
@@ -11,12 +14,18 @@ class Login extends StatelessWidget {
           buildImage(context),
           SizedBox(height: 10),
           Center(
-              child: Text(
-            'Welcome to Saifty',
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-          )),
+            child: Text(
+              'Welcome to Saifty',
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 20,
+              ),
+            ),
+          ),
           SizedBox(height: 10),
-          Center(child: Text('Keep your data safe!')),
+          Center(
+            child: Text('Keep your data safe!'),
+          ),
           SizedBox(height: 40),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 80),
@@ -51,10 +60,18 @@ class Login extends StatelessWidget {
             child: Text('Login'),
           ),
           SizedBox(height: 5),
-          Center(child: Text('Forget password')),
-          SizedBox(height: 70),
-          Center(child: Text('Dont have an account?')), Center(child: Text(' Register!', style: TextStyle(fontWeight: FontWeight.w700,),)),
-          SizedBox(height: 10),
+          Center(
+            child: Text('Forget password?'),
+          ),
+          Spacer(),
+          ActionText(
+            normalText: 'Dont have an account?',
+            boldText: 'Register!',
+            onTextTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Register(backgroundColor: Colors.white)),
+            )),
+          SizedBox(height: 20),
         ],
       ),
     );

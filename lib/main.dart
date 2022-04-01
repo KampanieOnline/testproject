@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-//import 'package:testproject/home_page.dart';
 import 'package:testproject/login.dart';
+import 'package:testproject/register.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'Strona logowania',
-    home: Login(
+    home: Register(
       backgroundColor: Colors.white,
     ),
   ));
