@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testproject/action_text.dart';
 import 'package:testproject/register.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'action_text.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key, required Color backgroundColor}) : super(key: key);
@@ -56,7 +57,14 @@ class Login extends StatelessWidget {
             minWidth: 350.0,
             color: Colors.deepPurpleAccent,
             textColor: Colors.white,
-            onPressed: () {},
+            onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Register(
+                  backgroundColor: Colors.white,
+                ),
+              ),
+            );},
             child: Text('Login'),
           ),
           SizedBox(height: 5),
@@ -65,12 +73,19 @@ class Login extends StatelessWidget {
           ),
           Spacer(),
           ActionText(
-            normalText: 'Dont have an account?',
+            normalText: 'Don\'t have an account?',
             boldText: 'Register!',
-            onTextTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Register(backgroundColor: Colors.white)),
-            )),
+            onTextTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Register(
+                    backgroundColor: Colors.deepPurpleAccent,
+                  ),
+                ),
+              );
+            },
+          ),
           SizedBox(height: 20),
         ],
       ),

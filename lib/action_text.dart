@@ -19,7 +19,7 @@ class ActionText extends StatelessWidget {
       children: [
         Text(normalText),
         InkWell(
-          onTap: () {},
+          onTap: onTextTap,
           child: Text(
             ' $boldText',
             style: TextStyle(
